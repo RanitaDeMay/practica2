@@ -1,11 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title> Productos </ion-title>
-   
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">  
+
+  <ion-fab 
+    vertical="top" 
+    horizontal="end" 
+    slot="fixed"
+    [edge]="true"
+  >
+    <ion-fab-button (click)="openAddProduct()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <ion-grid>
     <ion-row>
       <ion-col size="12">
@@ -46,11 +57,24 @@
           <ion-card-content>
             {{product.description}}
           </ion-card-content>
-          <ion-button expand="block" (click)="addToCart(product, i)">
-            <ion-icon name="cart-outline" ></ion-icon>
-          </ion-button>
+          <div style="
+          display: flex;
+          gap: 5px;
+          ">
+            <ion-button (click)="addToCart(product, i)">
+              <ion-icon name="cart-outline" ></ion-icon>
+            </ion-button>
+            <ion-button (click)="eliminar(i)">
+              <ion-icon name="trash-outline" ></ion-icon>
+            </ion-button>
+            <ion-button (click)="actualizar(i, product)">
+              <ion-icon name="pencil-outline" ></ion-icon>
+            </ion-button>
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+
 </ion-content>

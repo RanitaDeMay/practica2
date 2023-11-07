@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<style>
+  .contenedor{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login{
+    display: flex;
+  }
+
+  .login form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 7px rgba(0, 0, 0, 0.8);
+    color: #000;
+    min-width: 400px;
+    max-width: 700px;
+  }
+
+  form h2 {
+    font-size: 2.1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #090909;
+    border-bottom: 3px solid #5a5656;
+    width: 110px;
+    margin-bottom: 30px;
+  }
+
+  form input {
+    background: #d7d7d7;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+  }
+
+  form input:last-child {
+    background: rgb(2, 2, 71);
+    border: none;
+    border-radius: 10px;
+    color:  #fff;
+    padding: 10px;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+  }
+
+  form input:last-child:hover {
+    background: rgb(2, 2, 53);
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
+<div class="contenedor">
+  <div class="login">
+    <form action="" (ngSubmit)="login()">
+      <h2>LOGIN</h2>
+      <input type="text" name="usuario" 
+            id="usuario" placeholder="Usuario..."
+            [(ngModel)]="formData.username">
+                    <br>
+      <input type="password" name="password" 
+            id="oassword" placeholder="Contraseña..."
+            [(ngModel)]="formData.password">
+      <input type="submit" value="Iniciar sesión">
+    </form>
+  </div>
+</div>
